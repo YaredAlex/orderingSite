@@ -3,9 +3,6 @@ import { useState } from "react";
 import { Button, Container } from "react-bootstrap"
 import { auth } from "../component/firebaseConfig";
 
-
-
-
 const Signin = ()=>{
   const [error , setError] = useState(false);
   const [data,setData] = useState({});
@@ -17,8 +14,10 @@ const Signin = ()=>{
              console.log("user created")
              console.log(res);
 
-          }catch(e){
-            setError("erro occured ");
+          }catch(err){
+            setError(err.message);
+            console.log("error in error")
+            console.log(err);
           }
    }
    const onchange = (e)=>{

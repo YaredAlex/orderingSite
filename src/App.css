@@ -1,1 +1,73 @@
 
+
+body::-webkit-scrollbar{
+    width: 5px;
+    height: 0;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgba(0,0,0,0.8);
+}
+.nav-bar-nav{
+    margin-left: 70%;
+}
+.food-card{
+    width:300px !important;
+    min-height:400px !important;
+}
+.food-card h4{
+    margin-bottom: 3px;
+}
+.food-card p{
+    margin-top: 0;
+    line-height: 20px;
+}
+.food-card p:last-child{
+    margin-bottom: 5px;
+}
+.star{
+    background-color: red;
+}
+.horizontal-cards{
+    overflow-x: auto;
+}
+.popular img{
+    width:100%;
+    height:260px;
+    display: block;
+    object-fit: contain;
+}
+.steps-card{
+    width:200px;
+    height: auto;
+}
+.steps img{
+    width:100%;
+    height: 150px;
+    object-fit: contain;
+}
+.steps p,.steps h4{
+    text-align: center;
+}
+.steps p{
+    line-height: 20px;
+}
+@media screen and (max-width:1000px) {
+    .nav-bar-nav{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width:800px) {
+    .food-card{
+        width:250px !important;
+        min-height:260px !important;
+    }
+    .popular img{
+        width:100%;
+        height:200px;
+        display: block;
+        object-fit: contain;
+    }
+    .img-hidden{
+        display: none;
+    }
+}
