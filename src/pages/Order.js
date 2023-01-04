@@ -8,10 +8,12 @@ import { db } from "../component/firebaseConfig";
 
 export const Order =()=>{
      const [items,setItems] = useState([]);
+     const [related,setRelated] = useState([]);
      const [loading,setLoading] = useState(true);
     const {id} = useParams();
     useEffect(()=>{
             const fetchdata =async()=>{
+                //featch data for related
                 const list = [];
                 const docRef = doc(db, "Items", id);
                 const docSnap = await getDoc(docRef);
@@ -28,7 +30,7 @@ export const Order =()=>{
             }
             fetchdata();
     },[]);
-    console.log(items);
+    
     return(
         <div>
         <Container>

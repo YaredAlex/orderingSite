@@ -100,12 +100,11 @@ const addFile = async()=>{
                  <select onChange={(e)=>setData({...data,[e.target.id]:e.target.value})} id="catagory" className="form-control"> 
                     <option value="">Select Item catagory</option>
                     <option value="pizza">Pizza</option>
-                    <option value="drink">Soft Drink</option>
+                    <option value="drink">Drink</option>
                     <option value="fried">Fried</option>
-                    <option value="energy">Energy Drink</option>
                     <option value="fish">Fish</option>
                     <option value="icecream">IceCream</option>
-                    <option value="rice">Rices</option>
+                    <option value="chickenrice">Rices/Biryani</option>
                     <option value="burger">Burger</option>
                  </select>
                   

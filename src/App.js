@@ -8,6 +8,8 @@ import Signin from './pages/Signin';
 import PageNotFound from './pages/PageNotFound';
 import { AddItems } from './pages/AddItems';
 import { Order } from './pages/Order';
+import CatagoryPage from './pages/CatagoryPage';
+import OrderNow from './pages/OrderNow';
 function App() {
   
   return (
@@ -19,6 +21,8 @@ function App() {
          <Route path="/signin" element={<Signin/>} />
          <Route path="/additem" element={<AddItems/>} />
          <Route path="/order/:id" element={<Order/>} />
+         <Route path="/catagory/:catagory" element={<CatagoryPage/>} />
+         <Route path="/ordernow" element={<OrderNow/>} />
          <Route path="*" element={<PageNotFound/>}/>
 
        </Routes>

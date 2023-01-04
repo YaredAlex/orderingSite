@@ -1,13 +1,13 @@
-import { Container ,Carousel, Button, Row, Stack,Card} from "react-bootstrap";
+import { Container ,Carousel,Stack,Card} from "react-bootstrap";
 import {useCookies} from 'react-cookie'
 import Popular from "../component/Popular";
 import Catagory from "../component/Catagory";
 import { Footer } from "../component/Footer";
 import { Steps } from "../component/Steps";
 import { collection, getDocs } from "firebase/firestore";
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import { db } from "../component/firebaseConfig";
-import { ItemsContext} from '../context/ItemsContext'
+import { Link } from "react-router-dom";
 const Home =()=>{
  const [cookie,setCookie] = useCookies(['user']);
  const user = JSON.parse(localStorage.getItem('user')) || '' ;
@@ -34,7 +34,7 @@ const Home =()=>{
     return(
         <>
         <Container className=" text-dark mt-3 mb-3">
-            <div className="border-2 border-dark border-bottom">
+            <div className="">
            <Carousel  variant="dark" >
       <Carousel.Item>
         <img
@@ -86,9 +86,9 @@ const Home =()=>{
          <p style={{maxWidth:"300px"}}>make sure you get the best! you deserve it 
             check out our menu here and order now
          </p>
-         <Button variant="warning" size="lg" className="shadow-lg ">orderNow!</Button>
+         <Link  className="btn btn-block btn-warning" to="/ordernow">orderNow!</Link>
     </div>
-     <img  src="img/cheff.png"
+     <img  src="img/cheff.png" alt="cheff"
      style={{height:"300px",objectFit:"contain",marginLeft:"auto",marginRight:"20px"}}  className="img-hidden"/>
      
      </Stack>
