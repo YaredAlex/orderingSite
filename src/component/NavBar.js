@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearchengin } from '@fortawesome/free-brands-svg-icons';
 import { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
@@ -13,6 +15,12 @@ const NavBar =()=>{
     <Navbar bg="danger" expand="lg" className=' navbar-dark'>
       <Container>
         <Navbar.Brand href="#home">food</Navbar.Brand>
+         <form className='search-bar shadow'>
+          <label>
+            <input type='search' placeholder='Search...'/>
+            <FontAwesomeIcon icon={faSearchengin} className="p-1"/>
+          </label>
+         </form>
         <Navbar.Toggle aria-controls="food-nav" />
         <Navbar.Collapse id="food-nav" className=''>
           <Nav className=" nav-bar-nav" >

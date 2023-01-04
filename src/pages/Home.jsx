@@ -4,9 +4,32 @@ import Popular from "../component/Popular";
 import Catagory from "../component/Catagory";
 import { Footer } from "../component/Footer";
 import { Steps } from "../component/Steps";
+import { collection, getDocs } from "firebase/firestore";
+import { useContext, useEffect, useState } from "react";
+import { db } from "../component/firebaseConfig";
+import { ItemsContext} from '../context/ItemsContext'
 const Home =()=>{
  const [cookie,setCookie] = useCookies(['user']);
  const user = JSON.parse(localStorage.getItem('user')) || '' ;
+ const [element,setElement] = useState([]);
+ useEffect(()=>{
+           const list = [];
+            const getDocment = async()=>{
+            try{
+                const querySnapshot = await getDocs(collection(db, "Items"));
+                querySnapshot.forEach((doc) => {
+                list.push({id:doc.id, ...doc.data()});
+                setElement(list);   
+            }); 
+            
+            }catch(e){
+                console.log(e);
+            }
+        }
+        getDocment();     
+        
+}  , []);
+
 
     return(
         <>
@@ -70,8 +93,8 @@ const Home =()=>{
      
      </Stack>
       {/*Making popular page*/}
-        <Popular/>
-        <Catagory/>
+        <Popular element={element}/>
+        <Catagory element={element}/>
         <Steps/>
         </Container>
         <Footer/>

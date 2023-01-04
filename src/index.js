@@ -5,15 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { UserContextProvider } from './context/UserContext';
 import { CookiesProvider } from 'react-cookie';
+import { ItemsContextProvider } from './context/ItemsContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <CookiesProvider>
     <UserContextProvider>
+    <ItemsContextProvider>
     <App />
+    </ItemsContextProvider>
     </UserContextProvider>
+    
     </CookiesProvider>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
