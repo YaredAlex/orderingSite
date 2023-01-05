@@ -1,7 +1,7 @@
 import { Container, Spinner } from "react-bootstrap"
 
 
-export const Spin =()=>{
+const SpinLoading =()=>{
     return(
             <div className="spinning-cont">
                 <div className=" rounded-lg text-center ">
@@ -10,3 +10,5 @@ export const Spin =()=>{
             </div>
     )
 }
+
+export default SpinLoading;

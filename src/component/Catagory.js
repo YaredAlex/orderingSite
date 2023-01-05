@@ -18,9 +18,11 @@ const Catagory = ()=>{
         <h2>Catagory</h2>
         <div className="position-absolute item-sliding-arrow">
             <div className="" onClick={()=>handleSlid(1)}>
-            <FontAwesomeIcon icon={faArrowAltCircleLeft} size="2x" /></div>
+            <span aria-hidden="true" className="carousel-control-prev-icon "
+            style={{filter:"invert(1) grayscale(100)",}}></span></div>
             <div  onClick={()=>handleSlid(2)}>
-            <FontAwesomeIcon icon={faArrowAltCircleRight}  size="2x" /></div>
+            <span aria-hidden="true" className="carousel-control-next-icon "
+            style={{filter:"invert(1) grayscale(100)",}}></span></div>
            </div>
    <Row className="gap-3 flex-nowrap catagory-horizontal-cards">
    {/*First popuplar dish  */}

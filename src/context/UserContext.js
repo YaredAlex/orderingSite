@@ -1,7 +1,9 @@
 import { useReducer } from "react";
 import React from "react";
+import { useCookies } from "react-cookie";
 const INITIAL_STATE ={
-    currentUser: JSON.parse(localStorage.getItem('user'))||null,
+    currentUser: {
+    },
 }
 const reducer = (state,action)=>{
     switch(action.type){
@@ -15,8 +17,10 @@ const reducer = (state,action)=>{
     }
 }
 export const UserContext = React.createContext(INITIAL_STATE);
-
+ 
 export const UserContextProvider = ({children}) =>{
+    const [cookie,setCookie] = useCookies();
+   INITIAL_STATE.currentUser= {email:cookie.name||null}
   const [state,dispatch] = useReducer(reducer,INITIAL_STATE);
    return(
       <UserContext.Provider value={{currentUser:state.currentUser,dispatch}}>

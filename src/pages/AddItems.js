@@ -5,7 +5,7 @@ import noimage from '../noimage.png'
 import { collection, doc, setDoc ,addDoc} from "firebase/firestore"; 
 import { db ,storage} from "../component/firebaseConfig";
 import Swal from "sweetalert2";
-import { Spin } from "../component/Spinning";
+import SpinLoading from "../component/Spinning";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 
@@ -81,7 +81,7 @@ const addFile = async()=>{
  }
     return(
        <Container>
-        {process && <Spin/>}
+        {process && <SpinLoading/>}
         <h4 className="text-center mb-5">Add New Items here
                 </h4>
            <form className="d-flex justify-content-center flex-wrap" onSubmit={addData}>

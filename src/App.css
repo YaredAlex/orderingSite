@@ -26,7 +26,7 @@ body::-webkit-scrollbar-thumb{
     object-fit: cover;
 }
 .spinning-cont{
-    position: absolute;
+    position: fixed;
     background-color: rgba(0, 0, 0, 0.192);
     width: 100vw;
     height: 100vh;
@@ -35,8 +35,11 @@ body::-webkit-scrollbar-thumb{
     top: 0;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
-
+.logout-message{
+    width: 20%;
+}
 .food-card{
     width:300px !important;
     min-height:400px !important;
@@ -102,17 +105,23 @@ body::-webkit-scrollbar-thumb{
     border-bottom-right-radius: 0;
 }
 .search-bar input:hover{
-    background-color: rgba(218, 219, 218, 0.3);
+    background-color: rgba(245, 246, 245, 0.3);
     
 }
 .search-bar input:focus{
-    background-color: rgba(218, 219, 218, 0.4);
+    background-color: rgba(247, 247, 247, 0.4);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+.search-btn{
+    cursor: pointer;
+    vertical-align: middle;
+}
+.search-btn:hover{
+  background-color: rgba(255, 193, 7, 0.695);
+}
 .search-bar label{
     width: 100%;
-    border-radius: 10px;
     display: flex;
     background-color: white;
     overflow: hidden;
@@ -124,9 +133,6 @@ body::-webkit-scrollbar-thumb{
     outline: none;
     width: 100%;
     border: none;
-    border-radius: 10px;
-    border-right-color: aliceblue;
-    border-right: 1px;
 }
 .order-box-img-container{
     max-width: 500px;
@@ -191,13 +197,27 @@ width: 86vw;
 transition: all 0.2s ease-in-out;
 }
 .item-sliding-arrow div{
-    padding: 5px;
+    padding: 8px 10px;
     border-radius: 50%;
-    border: 1px solid rgba(68, 68, 68, 0.795);
     display: block;
 }
 .item-sliding-arrow div:hover{
-    background-color: rgba(47, 47, 47, 0.215);
+    background-color: rgba(209, 209, 209, 0.215);
+}
+.user-profile-setting{
+    max-width: 500px;
+}
+.user-profile-image{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    border: 1px solid rgba(188, 188, 188, 0.319);
+    overflow: hidden;
+    
+}
+.user-profile-image img{
+    width: 100%;
+    object-fit: contain;
 }
 @media screen and (max-width:1000px) {
     .nav-bar-nav{
@@ -207,6 +227,9 @@ transition: all 0.2s ease-in-out;
     .popular{
         margin: 0 auto;
         width: 90vw;
+    }
+    .logout-message{
+        width: 50%;
     }
 }
 @media screen and (max-width:576px) {
@@ -239,6 +262,9 @@ transition: all 0.2s ease-in-out;
     }
     .card-tobe-100{
         width: 180px !important;
+    }
+    .logout-message{
+        width: 60%;
     }
 }
 @media screen and (max-width:300px){

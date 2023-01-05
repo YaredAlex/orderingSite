@@ -10,6 +10,7 @@ import { AddItems } from './pages/AddItems';
 import { Order } from './pages/Order';
 import CatagoryPage from './pages/CatagoryPage';
 import OrderNow from './pages/OrderNow';
+import UserSetting from './pages/UserSettingPage';
 function App() {
   
   return (
@@ -23,6 +24,7 @@ function App() {
          <Route path="/order/:id" element={<Order/>} />
          <Route path="/catagory/:catagory" element={<CatagoryPage/>} />
          <Route path="/ordernow" element={<OrderNow/>} />
+         <Route path="/usersetting" element={<UserSetting/>}/>
          <Route path="*" element={<PageNotFound/>}/>
 
        </Routes>
